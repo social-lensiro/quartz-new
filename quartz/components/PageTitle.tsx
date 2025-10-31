@@ -6,43 +6,39 @@ const PageTitle: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => 
   const title = cfg?.pageTitle ?? i18n(cfg.locale).propertyDefaults.title
   const baseDir = pathToRoot(fileData.slug!)
   
+  const containerStyle = {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '1rem',
+    margin: '2rem 0',
+  };
+
   const logoStyle = {
-    fontSize: '2.5rem',
+    fontSize: '2.2rem',
     fontWeight: 800,
     fontFamily: 'Arial, sans-serif',
     color: 'black',
     textDecoration: 'none',
     letterSpacing: '0.1em',
     textTransform: 'uppercase',
-    marginBottom: '1rem',
-    display: 'block'
-  };
-
-  const containerStyle = {
-    display: 'flex',
-    flexDirection: 'column' as const,
-    alignItems: 'center',
-    justifyContent: 'center',
-    gap: '0.5rem',
-    margin: '2rem 0',
-    textAlign: 'center' as const
+    lineHeight: 1,
   };
 
   const titleStyle = {
-    fontSize: '2rem',
+    fontSize: '1.8rem',
     margin: 0,
-    fontWeight: 600,
+    fontWeight: 400,
     fontFamily: 'Arial, sans-serif',
     color: 'black',
-    textDecoration: 'none'
+    textDecoration: 'none',
+    lineHeight: 1,
   };
 
   return (
     <div style={containerStyle}>
       <a href={baseDir} style={logoStyle}>LENSIRO</a>
-      <h1 style={titleStyle}>
-        <a href={baseDir} style={{color: 'inherit', textDecoration: 'none'}}>{title}</a>
-      </h1>
+      <span style={titleStyle}>{title}</span>
     </div>
   )
 }
