@@ -1,5 +1,6 @@
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import { classNames } from "../util/lang"
+import { JSX } from "preact"
 
 export interface ImageOptions {
   caption?: string
@@ -42,7 +43,7 @@ const EnhancedImage: QuartzComponent = ({ fileData, cfg, displayClass, ...opts }
     fontStyle: 'italic',
   }
 
-  const handleImageClick = (e: React.MouseEvent<HTMLImageElement>) => {
+  const handleImageClick = (e: JSX.TargetedMouseEvent<HTMLImageElement>) => {
     const img = e.currentTarget
     if (img.style.transform === 'scale(1.5)') {
       img.style.transform = 'scale(1)'
@@ -53,17 +54,20 @@ const EnhancedImage: QuartzComponent = ({ fileData, cfg, displayClass, ...opts }
     }
   }
 
+  // Filter out any undefined or invalid display classes
+  const validDisplayClass = displayClass === 'mobile-only' || displayClass === 'desktop-only' ? displayClass : undefined
+  
   return (
-    <div class={classNames(displayClass, "enhanced-image")} style={containerStyle}>
+    <div style={containerStyle}>
       <img 
-        src={fileData.frontmatter?.image} 
-        alt={options.caption || 'Image'}
+        src={fileData.filePath!}
+        alt={options.caption || ''}
         style={imageStyle}
         onClick={handleImageClick}
-        loading="lazy"
+        className={classNames(validDisplayClass, 'img-zoom')}
       />
       {options.caption && (
-        <div class="image-caption" style={captionStyle}>
+        <div style={captionStyle}>
           {options.caption}
         </div>
       )}

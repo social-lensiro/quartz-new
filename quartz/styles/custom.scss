@@ -11,3 +11,24 @@ img {
   margin-left: auto;
   margin-right: auto;
 }
+/* --- Efek Bayangan dan Zoom pada Gambar --- */
+img {
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  cursor: zoom-in;
+  max-width: 100%;
+  height: auto;
+}
+
+img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+img:active {
+  transform: scale(1.15);
+  z-index: 99;
+}
