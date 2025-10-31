@@ -1,49 +1,34 @@
 import { pathToRoot } from "../util/path"
 import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 
-const PageTitle: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
-  const title = "Manual" // Force "Manual" as the title
+const PageTitle: QuartzComponent = ({ fileData, cfg }: QuartzComponentProps) => {
+  const title = cfg?.pageTitle ?? "Manual Lensiro"
   const baseDir = pathToRoot(fileData.slug!)
   
   const containerStyle = {
     display: 'flex',
+    flexDirection: 'column' as const,
     alignItems: 'center',
     justifyContent: 'center',
-    gap: '0.8rem',
-    padding: '2rem 0',
-    borderBottom: '1px solid #e5e5e5',
-    marginBottom: '2rem',
-  };
-
-  const logoStyle = {
-    height: '40px',
-    width: 'auto',
-    display: 'block',
+    gap: '0.5rem',
+    margin: '2rem 0',
+    textAlign: 'center' as const,
   };
 
   const titleStyle = {
-    fontSize: '1.8rem',
+    fontSize: '2rem',
     margin: 0,
-    fontWeight: 400,
+    fontWeight: 600,
     fontFamily: 'Arial, sans-serif',
-    color: '#666',
+    color: 'var(--dark)',
     textDecoration: 'none',
-    lineHeight: 1,
-  };
-
-  const separatorStyle = {
-    color: '#ccc',
-    fontSize: '1.8rem',
-    lineHeight: 1,
   };
 
   return (
     <div style={containerStyle}>
-      <a href={baseDir}>
-        <img src="/assets/logoDark.svg" alt="Lensiro Logo" style={logoStyle} />
-      </a>
-      <span style={separatorStyle}>/</span>
-      <span style={titleStyle}>{title}</span>
+      <h1 style={titleStyle}>
+        <a href={baseDir} style={{color: 'inherit', textDecoration: 'none'}}>{title}</a>
+      </h1>
     </div>
   )
 }
