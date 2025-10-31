@@ -1,0 +1,75 @@
+---
+// This component handles the image display with shadow and zoom functionality
+---
+
+<div class="image-container">
+  <img 
+    src={Astro.props.src} 
+    alt={Astro.props.alt || Astro.props.caption || 'Image'}
+    class="zoomable-image"
+    style={`
+      width: ${Astro.props.width || '100%'}; 
+      height: ${Astro.props.height || 'auto'};
+    `}
+    loading="lazy"
+  />
+  {Astro.props.caption && (
+    <div class="image-caption">
+      {Astro.props.caption}
+    </div>
+  )}
+</div>
+
+<style>
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem 0;
+    max-width: 100%;
+  }
+
+  .zoomable-image {
+    max-width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+    cursor: zoom-in;
+    object-fit: contain;
+    background-color: var(--light);
+    padding: 0.5rem;
+  }
+
+  .zoomable-image.zoomed {
+    transform: scale(1.5);
+    cursor: zoom-out;
+    z-index: 10;
+    position: relative;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
+    background-color: white;
+  }
+
+  .image-caption {
+    text-align: center;
+    margin-top: 0.5rem;
+    color: var(--darkgray);
+    font-size: 0.9rem;
+    font-style: italic;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const images = document.querySelectorAll('.zoomable-image');
+    
+    images.forEach(img => {
+      img.addEventListener('click', () => {
+        img.classList.toggle('zoomed');
+        
+        if (img.classList.contains('zoomed')) {
+          img.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      });
+    });
+  });
+</script>

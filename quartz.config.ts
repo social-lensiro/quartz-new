@@ -69,6 +69,14 @@ const config: QuartzConfig = {
       Plugin.CrawlLinks({ markdownLinkResolution: "shortest" }),
       Plugin.Description(),
       Plugin.Latex({ renderEngine: "katex" }),
+      // Add a custom transformer for images
+      {
+        name: 'ImageEnhancement',
+        textTransform(ctx, src) {
+          // Add zoomable class to all images
+          return src.replace(/<img/g, '<img class="zoomable-image"');
+        }
+      }
     ],
     filters: [Plugin.RemoveDrafts()],
     emitters: [
