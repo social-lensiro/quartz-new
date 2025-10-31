@@ -11,17 +11,18 @@ img {
   margin-left: auto;
   margin-right: auto;
 
+  /* Hover effect */
   &:hover {
     transform: scale(1.8);
     z-index: 1000;
     position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     background: white;
     cursor: zoom-out;
   }
 }
 
-/* Prevent body scrolling when hovering over images */
-body:has(img:hover) {
-  overflow: hidden;
+/* Optional: Prevent content shift during hover */
+body {
+  overflow-x: hidden;
 }
