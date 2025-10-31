@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+    <channel>
+      <title>Quartz 4</title>
+      <link>https://quartz.jzhao.xyz</link>
+      <description>Last 10 notes on Quartz 4</description>
+      <generator>Quartz -- quartz.jzhao.xyz</generator>
+      <item>
+    <title>00 - Cover</title>
+    <link>https://quartz.jzhao.xyz/01---Cover/00---Cover</link>
+    <guid>https://quartz.jzhao.xyz/01---Cover/00---Cover</guid>
+    <description><![CDATA[  . ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>01 - Lensiro</title>
+    <link>https://quartz.jzhao.xyz/01---Cover/01---Lensiro</link>
+    <guid>https://quartz.jzhao.xyz/01---Cover/01---Lensiro</guid>
+    <description><![CDATA[ 1.1 Latar Belakang Dalam era digital saat ini, kemajuan teknologi informasi telah membawa perubahan besar di berbagai sektor bisnis, termasuk industri optik. ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>02 - Dashboard</title>
+    <link>https://quartz.jzhao.xyz/01---Cover/02---Dashboard</link>
+    <guid>https://quartz.jzhao.xyz/01---Cover/02---Dashboard</guid>
+    <description><![CDATA[ Dashboard &amp; Reminder Pengertian Dashboard Lensiro merupakan pusat kontrol utama sistem yang menampilkan ringkasan aktivitas bisnis secara real-time, termasuk penjualan, transaksi, pengeluaran, dan status pesanan. ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>00 - Master</title>
+    <link>https://quartz.jzhao.xyz/02---Master/00---Master</link>
+    <guid>https://quartz.jzhao.xyz/02---Master/00---Master</guid>
+    <description><![CDATA[ 1. ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>01 - Supplier</title>
+    <link>https://quartz.jzhao.xyz/02---Master/01---Supplier</link>
+    <guid>https://quartz.jzhao.xyz/02---Master/01---Supplier</guid>
+    <description><![CDATA[ Pengertian Menu Supplier berfungsi untuk mencatat dan mengelola daftar pemasok barang seperti lensa, frame, atau aksesoris yang digunakan dalam proses pembelian dan penjualan. ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>02 - Cabang</title>
+    <link>https://quartz.jzhao.xyz/02---Master/02---Cabang</link>
+    <guid>https://quartz.jzhao.xyz/02---Master/02---Cabang</guid>
+    <description><![CDATA[ Pengertian Fitur Cabang dalam aplikasi Lensiro digunakan untuk mengatur data cabang bisnis yang dimiliki oleh pengguna. ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>03 - Kategori Barang</title>
+    <link>https://quartz.jzhao.xyz/02---Master/03---Kategori-Barang</link>
+    <guid>https://quartz.jzhao.xyz/02---Master/03---Kategori-Barang</guid>
+    <description><![CDATA[ Pengertian Fitur Kategori Barang berfungsi untuk mengelompokkan barang dan jasa yang terdaftar di modul Master Barang. ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>04 - Sub Kategori Barang</title>
+    <link>https://quartz.jzhao.xyz/02---Master/04---Sub-Kategori-Barang</link>
+    <guid>https://quartz.jzhao.xyz/02---Master/04---Sub-Kategori-Barang</guid>
+    <description><![CDATA[ Pengertian Sub Kategori Barang adalah pengelompokan yang lebih spesifik dari sebuah Kategori Barang yang lebih umum. ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>05 - Brand Barang</title>
+    <link>https://quartz.jzhao.xyz/02---Master/05---Brand-Barang</link>
+    <guid>https://quartz.jzhao.xyz/02---Master/05---Brand-Barang</guid>
+    <description><![CDATA[ Pengertian Fitur Brand Barang digunakan untuk mengelompokkan produk berdasarkan merek (brand). ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item><item>
+    <title>06 - Sub Brand Barang</title>
+    <link>https://quartz.jzhao.xyz/02---Master/06---Sub-Brand-Barang</link>
+    <guid>https://quartz.jzhao.xyz/02---Master/06---Sub-Brand-Barang</guid>
+    <description><![CDATA[ Pengertian Sub Brand Barang adalah merek turunan atau varian khusus yang berada di bawah satu merek utama (brand induk). ]]></description>
+    <pubDate>Fri, 31 Oct 2025 06:56:08 GMT</pubDate>
+  </item>
+    </channel>
+  </rss>

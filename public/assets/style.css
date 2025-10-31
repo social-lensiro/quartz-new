@@ -1,0 +1,53 @@
+
+/* 🌈 Lensiro Elegant Base Style */
+
+/* Gaya gambar */
+.markdown-preview-view img {
+  border: 2px solid #d1d5db; /* abu lembut */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: zoom-in;
+}
+
+.markdown-preview-view img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* Efek teks & heading */
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3 {
+  color: #1e3a8a; /* biru khas Lensiro */
+  border-bottom: 1px solid #e2e8f0;
+  padding-bottom: 4px;
+}
+
+/* Link elegan */
+.markdown-preview-view a {
+  color: #2563eb;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.markdown-preview-view a:hover {
+  color: #1e40af;
+  text-decoration: underline;
+}
+
+/* Caption gambar */
+figcaption {
+  text-align: center;
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 4px;
+}
+
+/* Penyesuaian di mode publikasi */
+.markdown-preview-sizer img,
+.markdown-source-view img {
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
