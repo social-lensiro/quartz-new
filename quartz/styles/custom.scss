@@ -1,50 +1,13 @@
 @use "./base";
 
-// Image zoom styles
+// Basic image styling
 img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-  cursor: zoom-in;
-  object-fit: contain;
-  background-color: var(--light);
-  padding: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   margin: 1rem 0;
   display: block;
   margin-left: auto;
   margin-right: auto;
-
-  &.zoomed {
-    transform: scale(1.5);
-    cursor: zoom-out;
-    z-index: 1000;
-    position: relative;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2) !important;
-    background-color: white;
-  }
-}
-
-.image-caption {
-  text-align: center;
-  margin-top: 0.5rem;
-  color: var(--darkgray);
-  font-size: 0.9rem;
-  font-style: italic;
-  display: block;
-  margin-bottom: 1.5rem;
-}
-
-// Add some spacing around images
-p > img {
-  margin: 1.5rem 0;
-}
-
-// Make sure images don't overflow their containers
-.content {
-  img {
-    max-width: 100%;
-    height: auto;
-  }
 }
