@@ -9,13 +9,7 @@ const PageTitle: QuartzComponent = ({ fileData, cfg, displayClass }: QuartzCompo
   return (
     <div class={classNames(displayClass, "page-title-container")}>
       <div class="logo-container">
-        <a href={baseDir}>
-          <svg width="120" height="50" viewBox="0 0 160 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="160" height="70.6207" fill="#000000"/>
-            <path d="M40 35.5C40 27.4919 46.4919 21 54.5 21H105.5C113.508 21 120 27.4919 120 35.5C120 43.5081 113.508 50 105.5 50H54.5C46.4919 50 40 43.5081 40 35.5Z" fill="white"/>
-            <circle cx="80" cy="35.5" r="14.5" fill="#000000"/>
-          </svg>
-        </a>
+        <a href={baseDir} class="logo-text">LENSIRO</a>
       </div>
       <h1 class="site-title">
         <a href={baseDir}>{title}</a>
@@ -39,9 +33,18 @@ PageTitle.css = `
   margin-bottom: 1rem;
 }
 
-.logo-container svg {
-  height: 50px;
-  width: auto;
+.logo-text {
+  font-size: 2.5rem;
+  font-weight: 800;
+  font-family: var(--titleFont);
+  color: #000;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.dark .logo-text {
+  color: #fff;
 }
 
 .site-title {
