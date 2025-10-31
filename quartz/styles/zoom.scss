@@ -1,0 +1,60 @@
+/* Make sure images are visible and interactive */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: zoom-in;
+  display: block;
+  margin: 1.5rem auto;
+  background: white;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+
+/* Zoomed state */
+img.zoomed {
+  position: relative;
+  z-index: 1000;
+  transform: scale(1.8);
+  cursor: zoom-out;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  max-height: 90vh;
+  width: auto;
+  margin: 2rem auto;
+  background: white;
+  padding: 1rem;
+  border: 1px solid #eee;
+}
+
+/* Caption styling */
+.image-caption {
+  text-align: center;
+  color: var(--darkgray);
+  font-size: 0.9em;
+  margin: 0.5rem 0 1.5rem 0;
+  font-style: italic;
+}
+
+/* Overlay for better focus on zoomed images */
+.zoom-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 999;
+  cursor: zoom-out;
+}
+
+/* When an image is zoomed, show the overlay */
+body.zoomed {
+  overflow: hidden;
+}
+
+body.zoomed .zoom-overlay {
+  display: block;
+}
