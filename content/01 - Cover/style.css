@@ -1,0 +1,26 @@
+.markdown-preview-view img {
+  border: 2px solid #d1d5db; /* warna abu lembut */
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease;
+}
+
+.markdown-preview-view img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Tambahan agar di Publish sama */
+.markdown-preview-sizer img,
+.markdown-source-view img {
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.85em;
+  color: #555;
+  margin-top: 4px;
+}
