@@ -1,176 +1,27 @@
 /* Image Zoom Styles */
 img {
-    cursor: pointer;
-    transition: transform 0.2s ease;
-    max-width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin: 1rem 0;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  
-    &:hover {
-      transform: scale(1.02);
-    }
-  
-    &.zoomed {
-      position: fixed;
-      top: 50% !important;
-      left: 50% !important;
-      transform: translate(-50%, -50%) scale(1.8) !important;
-      max-width: 90vw !important;
-      max-height: 90vh !important;
-      width: auto !important;
-      height: auto !important;
-      margin: 0 !important;
-      padding: 1rem !important;
-      z-index: 1001 !important;
-      background: white !important;
-      box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.8) !important;
-      cursor: zoom-out !important;
-      object-fit: contain !important;
-    }
-  }
-  
-  .zoom-overlay {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+  cursor: zoom-in;
+  transition: transform 0.3s ease;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:hover {
+    transform: scale(1.8);
     z-index: 1000;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background: white;
     cursor: zoom-out;
   }
-  
-  body.zoomed {
-    overflow: hidden;
-  }
-  
-  body.zoomed .zoom-overlay {
-    display: block;
-  }
-  
-  /* Debug styles - will help us see if the script is running */
-  .debug-zoom {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    background: rgba(0, 0, 0, 0.8);
-    color: white;
-    padding: 10px;
-    border-radius: 4px;
-    z-index: 9999;
-    font-family: monospace;
-  }
-  
-  /* Add this script to the end of the file */
-  /* This script will be injected into the page */
-  <script>
-    console.log('Zoom script loaded!'); // Debug log
-  
-    // Create debug element
-    const debugEl = document.createElement('div');
-    debugEl.className = 'debug-zoom';
-    debugEl.textContent = 'Zoom script loaded!';
-    document.body.appendChild(debugEl);
-  
-    // Create overlay
-    const overlay = document.createElement('div');
-    overlay.className = 'zoom-overlay';
-    document.body.appendChild(overlay);
-  
-    // Add click handler to all images
-    function initZoom() {
-      console.log('Initializing zoom...'); // Debug log
-      const images = document.querySelectorAll('img');
-      console.log(`Found ${images.length} images`); // Debug log
-      
-      images.forEach((img, index) => {
-        if (img.dataset.zoomInitialized) return;
-        img.dataset.zoomInitialized = 'true';
-        console.log(`Initialized image ${index + 1}`); // Debug log
-        
-        img.addEventListener('click', function(e) {
-          console.log('Image clicked!'); // Debug log
-          e.stopPropagation();
-          
-          if (this.classList.contains('zoomed')) {
-            // Zoom out
-            console.log('Zooming out'); // Debug log
-            this.classList.remove('zoomed');
-            overlay.style.display = 'none';
-            document.body.classList.remove('zoomed');
-          } else {
-            // Zoom in
-            console.log('Zooming in'); // Debug log
-            document.querySelectorAll('img.zoomed').forEach(zoomedImg => {
-              zoomedImg.classList.remove('zoomed');
-            });
-            
-            this.classList.add('zoomed');
-            overlay.style.display = 'block';
-            document.body.classList.add('zoomed');
-            debugEl.textContent = 'Image zoomed in!';
-            
-            // Close on overlay click
-            overlay.onclick = function() {
-              console.log('Overlay clicked'); // Debug log
-              document.querySelectorAll('img.zoomed').forEach(img => {
-                img.classList.remove('zoomed');
-              });
-              overlay.style.display = 'none';
-              document.body.classList.remove('zoomed');
-              debugEl.textContent = 'Image zoomed out (via overlay)';
-            };
-            
-            // Close on escape key
-            const handleKeyDown = function(e) {
-              if (e.key === 'Escape') {
-                console.log('Escape key pressed'); // Debug log
-                document.querySelectorAll('img.zoomed').forEach(img => {
-                  img.classList.remove('zoomed');
-                });
-                overlay.style.display = 'none';
-                document.body.classList.remove('zoomed');
-                document.removeEventListener('keydown', handleKeyDown);
-                debugEl.textContent = 'Image zoomed out (via ESC)';
-              }
-            };
-            
-            document.addEventListener('keydown', handleKeyDown);
-          }
-        });
-      });
-    }
-    
-    // Initial initialization
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', initZoom);
-    } else {
-      initZoom();
-    }
-    
-    // Re-initialize for dynamically loaded content
-    if (typeof window.MutationObserver !== 'undefined') {
-      new MutationObserver(function(mutations) {
-        let shouldReinit = false;
-        mutations.forEach(function(mutation) {
-          if (mutation.addedNodes.length) {
-            shouldReinit = true;
-          }
-        });
-        if (shouldReinit) {
-          console.log('New content detected, reinitializing zoom...'); // Debug log
-          debugEl.textContent = 'New content detected, reinitializing zoom...';
-          initZoom();
-        }
-      }).observe(document.body, {
-        childList: true,
-        subtree: true
-      });
-    }
-  </script>
+}
+
+/* Prevent body scrolling when hovering over images */
+body:has(img:hover) {
+  overflow: hidden;
+}
