@@ -16,14 +16,9 @@ const PageTitle: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
   };
 
   const logoStyle = {
-    fontSize: '1.8rem',
-    fontWeight: 800,
-    fontFamily: 'Arial, sans-serif',
-    color: '#000',
-    textDecoration: 'none',
-    letterSpacing: '0.1em',
-    textTransform: 'uppercase',
-    lineHeight: 1,
+    height: '40px',
+    width: 'auto',
+    display: 'block',
   };
 
   const titleStyle = {
@@ -44,7 +39,9 @@ const PageTitle: QuartzComponent = ({ fileData }: QuartzComponentProps) => {
 
   return (
     <div style={containerStyle}>
-      <a href={baseDir} style={logoStyle}>LENSIRO</a>
+      <a href={baseDir}>
+        <img src="/assets/logoDark.svg" alt="Lensiro Logo" style={logoStyle} />
+      </a>
       <span style={separatorStyle}>/</span>
       <span style={titleStyle}>{title}</span>
     </div>
